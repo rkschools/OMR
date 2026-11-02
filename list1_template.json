@@ -1,0 +1,80 @@
+{
+  "header": {
+    "school_name": "RISE 2027",
+    "exam_name": "LIST 1 EXAM",
+    "subtitle": "50 Questions"
+  },
+  "brand_colors": {
+    "primary": "#123E7C",
+    "accent": "#E8720C"
+  },
+  "page": {
+    "size": "A4",
+    "orientation": "Portrait"
+  },
+  "layout": {
+    "columns": 3,
+    "options": 4
+  },
+  "qr": {
+    "enabled": true
+  },
+  "sections": [
+    {
+      "section_id": "english",
+      "name": "ENGLISH",
+      "order": 1,
+      "allocated_marks": 10,
+      "question_count": 10,
+      "marks_per_question": 1,
+      "option_count": 4,
+      "question_numbering": { "start": 1, "end": 10 }
+    },
+    {
+      "section_id": "science",
+      "name": "SCIENCE",
+      "order": 2,
+      "allocated_marks": 20,
+      "question_count": 20,
+      "marks_per_question": 1,
+      "option_count": 4,
+      "question_numbering": { "start": 11, "end": 30 }
+    },
+    {
+      "section_id": "maths",
+      "name": "MATHS",
+      "order": 3,
+      "allocated_marks": 15,
+      "question_count": 15,
+      "marks_per_question": 1,
+      "option_count": 4,
+      "question_numbering": { "start": 31, "end": 45 }
+    },
+    {
+      "section_id": "gk_computer",
+      "name": "GK/COMPUTER",
+      "order": 4,
+      "allocated_marks": 3,
+      "question_count": 3,
+      "marks_per_question": 1,
+      "option_count": 4,
+      "question_numbering": { "start": 46, "end": 48 }
+    },
+    {
+      "section_id": "current_affairs",
+      "name": "CURRENT AFFAIRS",
+      "order": 5,
+      "allocated_marks": 2,
+      "question_count": 2,
+      "marks_per_question": 1,
+      "option_count": 4,
+      "question_numbering": { "start": 49, "end": 50 }
+    }
+  ],
+  "student_fields": [
+    { "field_id": "name", "label": "Student Name", "order": 1, "input_type": "text", "required": true, "enabled": true },
+    { "field_id": "reg_no", "label": "Registration Number", "order": 2, "input_type": "grid", "required": true, "enabled": true },
+    { "field_id": "class", "label": "Class", "order": 3, "input_type": "text", "required": true, "enabled": true },
+    { "field_id": "date", "label": "Date", "order": 4, "input_type": "text", "required": true, "enabled": true }
+  ]
+}

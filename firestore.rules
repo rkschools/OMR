@@ -1,0 +1,92 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Helper function to check if user is admin
+    function isAdmin() {
+      return isAuthenticated() && 
+             (request.auth.token.email == 'admin@rise.com' ||
+              (exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+               get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin'));
+    }
+
+    // 1. Users
+    match /users/{userId} {
+      allow read: if isAuthenticated() && request.auth.uid == userId;
+      
+      // Allow creation of admin ONLY if setup doesn't exist yet (first-run).
+      // Otherwise, any creation must NOT be an admin (e.g. operator)
+      allow create: if isAuthenticated() && request.auth.uid == userId && (
+        (!exists(/databases/$(database)/documents/system/setup) && request.resource.data.role == 'admin') ||
+        (exists(/databases/$(database)/documents/system/setup) && request.resource.data.role != 'admin')
+      );
+      
+      // Users can update their own profile, but CANNOT change their role
+      allow update: if isAuthenticated() && request.auth.uid == userId &&
+                    request.resource.data.role == resource.data.role;
+    }
+
+    // 1.5 System Config (for first-run setup detection)
+    match /system/{docId} {
+      allow read: if true;
+      // Setup can only be created once. Once exists, create fails.
+      allow create: if isAuthenticated() && !exists(/databases/$(database)/documents/system/setup);
+      allow update, delete: if false; // Immutable once written
+    }
+
+    // 2. Exams
+    match /exams/{examId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    // 3. Templates & Versions
+    match /templates/{templateId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+      
+      match /versions/{versionId} {
+        allow read: if isAuthenticated();
+        // Prevent modifying approved templates
+        allow update, delete: if isAdmin() && resource.data.status != 'APPROVED';
+        allow create: if isAdmin();
+      }
+    }
+
+    // 4. Answer Keys
+    match /answerKeys/{keyId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    // 5. Scan Jobs & Sheets
+    match /scanJobs/{jobId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    match /scanSheets/{sheetId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    // 6. Results
+    match /results/{resultId} {
+      allow read: if isAuthenticated();
+      allow update: if isAdmin(); // Operators can correct ambiguous flags
+      allow create, delete: if isAdmin();
+    }
+
+    // 7. Audit Logs
+    match /auditLogs/{logId} {
+      allow read: if isAdmin();
+      allow create: if isAdmin();
+      allow update, delete: if false; // Audit logs are immutable
+    }
+  }
+}

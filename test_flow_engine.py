@@ -1,0 +1,3 @@
+def generate_coordinates_mock():
+    # ... mock implementation to verify ...
+    pass

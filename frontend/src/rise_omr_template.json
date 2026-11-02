@@ -1,0 +1,92 @@
+{
+  "template_id": "RISE-OMR-v1",
+  "version": 1,
+  "exam_name": "RISE 2027",
+  "exam_title_long": "RK INTEGRATED SCHOLARSHIP EXAMINATION",
+  "brand_colors": {
+    "primary": "#123E7C",
+    "accent": "#E8720C"
+  },
+  "header": {
+    "school_name": "RK ENGLISH MEDIUM SCHOOL",
+    "subtitle": "OMR ANSWER SHEET"
+  },
+  "page": {
+    "size": "A4",
+    "orientation": "portrait",
+    "margins_mm": {
+      "top": 10,
+      "bottom": 10,
+      "left": 10,
+      "right": 10
+    },
+    "quiet_zone_mm": 5
+  },
+  "student_fields": [
+    { "field_id": "name", "label": "Student Name", "order": 1, "input_type": "handwritten", "required": true, "enabled": true },
+    { "field_id": "reg_no", "label": "Registration Number (6 DIGITS)", "order": 2, "input_type": "handwritten", "required": true, "enabled": true },
+    { "field_id": "phone", "label": "Phone Number", "order": 3, "input_type": "handwritten", "required": true, "enabled": true },
+    { "field_id": "class", "label": "Class", "order": 4, "input_type": "handwritten", "required": true, "enabled": true },
+    { "field_id": "section", "label": "Section", "order": 5, "input_type": "handwritten", "required": true, "enabled": true },
+    { "field_id": "date", "label": "Date", "order": 6, "input_type": "handwritten", "required": true, "enabled": true },
+    { "field_id": "paper_set", "label": "Paper Set", "order": 7, "input_type": "omr_bubble", "required": true, "enabled": true }
+  ],
+  "registration_number": {
+    "digits": 6,
+    "box_size_mm": { "w": 8, "h": 10 },
+    "gap_mm": 1,
+    "origin": { "x_mm": 0, "y_mm": 0 }
+  },
+  "paper_set": {
+    "enabled": true,
+    "options": ["A", "B", "C", "D"],
+    "bubble_diameter_mm": 4
+  },
+  "qr": {
+    "enabled": true,
+    "size_mm": 16,
+    "encodes": ["template_id", "version", "exam_id", "sheet_id", "set"]
+  },
+  "registration_marks": [
+    { "id": "tl", "x_mm": 5, "y_mm": 5, "size_mm": 4, "shape": "square_filled" },
+    { "id": "tr", "x_mm": 201, "y_mm": 5, "size_mm": 4, "shape": "square_filled" },
+    { "id": "bl", "x_mm": 5, "y_mm": 288, "size_mm": 4, "shape": "square_filled" },
+    { "id": "br", "x_mm": 201, "y_mm": 288, "size_mm": 4, "shape": "square_filled" }
+  ],
+  "layout": {
+    "columns": 2,
+    "column_gap_mm": 10,
+    "bubble_diameter_mm": 4,
+    "bubble_spacing_mm": 8,
+    "row_spacing_mm": 6
+  },
+  "sections": [
+    { "section_id": "telugu", "name": "TELUGU", "order": 1, "allocated_marks": 3, "question_count": 3, "marks_per_question": 1, "option_count": 4, "question_numbering": { "start": 1, "end": 3 } },
+    { "section_id": "hindi", "name": "HINDI", "order": 2, "allocated_marks": 3, "question_count": 3, "marks_per_question": 1, "option_count": 4, "question_numbering": { "start": 4, "end": 6 } },
+    { "section_id": "english", "name": "ENGLISH", "order": 3, "allocated_marks": 5, "question_count": 5, "marks_per_question": 1, "option_count": 4, "question_numbering": { "start": 7, "end": 11 } },
+    { "section_id": "maths", "name": "MATHEMATICS", "order": 4, "allocated_marks": 10, "question_count": 10, "marks_per_question": 1, "option_count": 4, "question_numbering": { "start": 12, "end": 21 } },
+    { "section_id": "science", "name": "SCIENCE", "order": 5, "allocated_marks": 18, "question_count": 18, "marks_per_question": 1, "option_count": 4, "question_numbering": { "start": 22, "end": 39 } },
+    { "section_id": "social", "name": "SOCIAL STUDIES", "order": 6, "allocated_marks": 5, "question_count": 5, "marks_per_question": 1, "option_count": 4, "question_numbering": { "start": 40, "end": 44 } },
+    { "section_id": "gk_computer", "name": "GK / COMPUTER", "order": 7, "allocated_marks": 4, "question_count": 4, "marks_per_question": 1, "option_count": 4, "question_numbering": { "start": 45, "end": 48 } },
+    { "section_id": "current_affairs", "name": "CURRENT AFFAIRS", "order": 8, "allocated_marks": 2, "question_count": 2, "marks_per_question": 1, "option_count": 4, "question_numbering": { "start": 49, "end": 50 } }
+  ],
+  "marking_engine_rule": {
+    "correct": 1,
+    "wrong_group_size": 3,
+    "wrong_group_penalty": 1,
+    "unanswered": 0,
+    "wrong": -0.3333
+  },
+  "total_marks": 50,
+  "total_questions": 50,
+  "scanner_params": {
+    "dpi": 300,
+    "color_mode": "grayscale",
+    "device_profile": "RICOH_IM2700"
+  },
+  "recognition_thresholds": {
+    "fill_ratio_marked": 0.65,
+    "fill_ratio_ambiguous_band": 0.15,
+    "skew_max_degrees": 3
+  }
+}

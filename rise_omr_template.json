@@ -1,0 +1,801 @@
+{
+  "template_id": "RISE-OMR-v1",
+  "version": 1,
+  "exam_name": "RISE 2027",
+  "exam_title_long": "RK INTEGRATED SCHOLARSHIP EXAMINATION",
+  "brand_colors": {
+    "primary": "#123E7C",
+    "accent": "#E8720C"
+  },
+  "header": {
+    "school_name": "RK ENGLISH MEDIUM SCHOOL",
+    "subtitle": "OMR ANSWER SHEET"
+  },
+  "page": {
+    "size": "A4",
+    "orientation": "portrait",
+    "margins_mm": {
+      "top": 10,
+      "bottom": 10,
+      "left": 10,
+      "right": 10
+    },
+    "quiet_zone_mm": 5
+  },
+  "student_fields": [
+    {
+      "field_id": "name",
+      "label": "Student Name",
+      "order": 1,
+      "input_type": "handwritten",
+      "required": true,
+      "enabled": true
+    },
+    {
+      "field_id": "reg_no",
+      "label": "Registration Number (6 DIGITS)",
+      "order": 2,
+      "input_type": "handwritten",
+      "required": true,
+      "enabled": true
+    },
+    {
+      "field_id": "phone",
+      "label": "Phone Number",
+      "order": 3,
+      "input_type": "handwritten",
+      "required": true,
+      "enabled": true
+    },
+    {
+      "field_id": "class",
+      "label": "Class",
+      "order": 4,
+      "input_type": "handwritten",
+      "required": true,
+      "enabled": true
+    },
+    {
+      "field_id": "section",
+      "label": "Section",
+      "order": 5,
+      "input_type": "handwritten",
+      "required": true,
+      "enabled": true
+    },
+    {
+      "field_id": "date",
+      "label": "Date",
+      "order": 6,
+      "input_type": "handwritten",
+      "required": true,
+      "enabled": true
+    },
+    {
+      "field_id": "paper_set",
+      "label": "Paper Set",
+      "order": 7,
+      "input_type": "omr_bubble",
+      "required": true,
+      "enabled": true
+    }
+  ],
+  "registration_number": {
+    "digits": 6,
+    "box_size_mm": {
+      "w": 8,
+      "h": 10
+    },
+    "gap_mm": 1,
+    "origin": {
+      "x_mm": 0,
+      "y_mm": 0
+    }
+  },
+  "paper_set": {
+    "enabled": true,
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "bubble_diameter_mm": 4
+  },
+  "qr": {
+    "enabled": true,
+    "size_mm": 16,
+    "encodes": [
+      "template_id",
+      "version",
+      "exam_id",
+      "sheet_id",
+      "set"
+    ]
+  },
+  "registration_marks": [
+    {
+      "id": "tl",
+      "x_mm": 5,
+      "y_mm": 5,
+      "size_mm": 4,
+      "shape": "square_filled"
+    },
+    {
+      "id": "tr",
+      "x_mm": 201,
+      "y_mm": 5,
+      "size_mm": 4,
+      "shape": "square_filled"
+    },
+    {
+      "id": "bl",
+      "x_mm": 5,
+      "y_mm": 288,
+      "size_mm": 4,
+      "shape": "square_filled"
+    },
+    {
+      "id": "br",
+      "x_mm": 201,
+      "y_mm": 288,
+      "size_mm": 4,
+      "shape": "square_filled"
+    }
+  ],
+  "layout": {
+    "columns": 2,
+    "column_gap_mm": 10,
+    "bubble_diameter_mm": 4,
+    "bubble_spacing_mm": 7.0,
+    "row_spacing_mm": 6,
+    "section_header_height": 8.0,
+    "section_header_bottom_gap": 5.0,
+    "section_bottom_margin": 8.0,
+    "bubble_spacing": 6.0
+  },
+  "sections": [
+    {
+      "section_id": "english",
+      "name": "ENGLISH",
+      "order": 1,
+      "allocated_marks": 10,
+      "question_count": 10,
+      "marks_per_question": 1,
+      "option_count": 4,
+      "question_numbering": {
+        "start": 1,
+        "end": 10
+      }
+    },
+    {
+      "section_id": "science",
+      "name": "SCIENCE",
+      "order": 2,
+      "allocated_marks": 20,
+      "question_count": 20,
+      "marks_per_question": 1,
+      "option_count": 4,
+      "question_numbering": {
+        "start": 11,
+        "end": 30
+      }
+    },
+    {
+      "section_id": "maths",
+      "name": "MATHEMATICS",
+      "order": 3,
+      "allocated_marks": 15,
+      "question_count": 15,
+      "marks_per_question": 1,
+      "option_count": 4,
+      "question_numbering": {
+        "start": 31,
+        "end": 45
+      }
+    },
+    {
+      "section_id": "gk_computer",
+      "name": "GK / COMPUTER",
+      "order": 4,
+      "allocated_marks": 3,
+      "question_count": 3,
+      "marks_per_question": 1,
+      "option_count": 4,
+      "question_numbering": {
+        "start": 46,
+        "end": 48
+      }
+    },
+    {
+      "section_id": "current_affairs",
+      "name": "CURRENT AFFAIRS",
+      "order": 5,
+      "allocated_marks": 2,
+      "question_count": 2,
+      "marks_per_question": 1,
+      "option_count": 4,
+      "question_numbering": {
+        "start": 49,
+        "end": 50
+      }
+    }
+  ],
+  "marking_engine_rule": {
+    "correct": 1,
+    "wrong_group_size": 3,
+    "wrong_group_penalty": 1,
+    "unanswered": 0,
+    "wrong": -0.3333333333333333
+  },
+  "total_marks": 50,
+  "total_questions": 50,
+  "scanner_params": {
+    "dpi": 300,
+    "color_mode": "grayscale",
+    "device_profile": "RICOH_IM2700"
+  },
+  "recognition_thresholds": {
+    "fill_ratio_marked": 0.65,
+    "fill_ratio_ambiguous_band": 0.15,
+    "skew_max_degrees": 3
+  },
+  "classesConfig": {
+    "1": {
+      "sections": [
+        {
+          "section_id": "english",
+          "name": "ENGLISH",
+          "order": 1,
+          "allocated_marks": 11,
+          "question_count": 11,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 1,
+            "end": 11
+          }
+        },
+        {
+          "section_id": "science",
+          "name": "SCIENCE",
+          "order": 2,
+          "allocated_marks": 21,
+          "question_count": 21,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 12,
+            "end": 32
+          }
+        },
+        {
+          "section_id": "maths",
+          "name": "MATHEMATICS",
+          "order": 3,
+          "allocated_marks": 15,
+          "question_count": 15,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 33,
+            "end": 47
+          }
+        },
+        {
+          "section_id": "gk_computer",
+          "name": "GK / COMPUTER",
+          "order": 4,
+          "allocated_marks": 3,
+          "question_count": 3,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 48,
+            "end": 50
+          }
+        }
+      ]
+    },
+    "2": {
+      "sections": [
+        {
+          "section_id": "english",
+          "name": "ENGLISH",
+          "order": 1,
+          "allocated_marks": 11,
+          "question_count": 11,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 1,
+            "end": 11
+          }
+        },
+        {
+          "section_id": "science",
+          "name": "SCIENCE",
+          "order": 2,
+          "allocated_marks": 21,
+          "question_count": 21,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 12,
+            "end": 32
+          }
+        },
+        {
+          "section_id": "maths",
+          "name": "MATHEMATICS",
+          "order": 3,
+          "allocated_marks": 15,
+          "question_count": 15,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 33,
+            "end": 47
+          }
+        },
+        {
+          "section_id": "gk_computer",
+          "name": "GK / COMPUTER",
+          "order": 4,
+          "allocated_marks": 3,
+          "question_count": 3,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 48,
+            "end": 50
+          }
+        }
+      ]
+    },
+    "3": {
+      "sections": [
+        {
+          "section_id": "english",
+          "name": "ENGLISH",
+          "order": 1,
+          "allocated_marks": 11,
+          "question_count": 11,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 1,
+            "end": 11
+          }
+        },
+        {
+          "section_id": "science",
+          "name": "SCIENCE",
+          "order": 2,
+          "allocated_marks": 21,
+          "question_count": 21,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 12,
+            "end": 32
+          }
+        },
+        {
+          "section_id": "maths",
+          "name": "MATHEMATICS",
+          "order": 3,
+          "allocated_marks": 15,
+          "question_count": 15,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 33,
+            "end": 47
+          }
+        },
+        {
+          "section_id": "gk_computer",
+          "name": "GK / COMPUTER",
+          "order": 4,
+          "allocated_marks": 3,
+          "question_count": 3,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 48,
+            "end": 50
+          }
+        }
+      ]
+    },
+    "4": {
+      "sections": [
+        {
+          "section_id": "english",
+          "name": "ENGLISH",
+          "order": 1,
+          "allocated_marks": 11,
+          "question_count": 11,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 1,
+            "end": 11
+          }
+        },
+        {
+          "section_id": "science",
+          "name": "SCIENCE",
+          "order": 2,
+          "allocated_marks": 21,
+          "question_count": 21,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 12,
+            "end": 32
+          }
+        },
+        {
+          "section_id": "maths",
+          "name": "MATHEMATICS",
+          "order": 3,
+          "allocated_marks": 15,
+          "question_count": 15,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 33,
+            "end": 47
+          }
+        },
+        {
+          "section_id": "gk_computer",
+          "name": "GK / COMPUTER",
+          "order": 4,
+          "allocated_marks": 3,
+          "question_count": 3,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 48,
+            "end": 50
+          }
+        }
+      ]
+    },
+    "5": {
+      "sections": [
+        {
+          "section_id": "english",
+          "name": "ENGLISH",
+          "order": 1,
+          "allocated_marks": 11,
+          "question_count": 11,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 1,
+            "end": 11
+          }
+        },
+        {
+          "section_id": "science",
+          "name": "SCIENCE",
+          "order": 2,
+          "allocated_marks": 21,
+          "question_count": 21,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 12,
+            "end": 32
+          }
+        },
+        {
+          "section_id": "maths",
+          "name": "MATHEMATICS",
+          "order": 3,
+          "allocated_marks": 15,
+          "question_count": 15,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 33,
+            "end": 47
+          }
+        },
+        {
+          "section_id": "gk_computer",
+          "name": "GK / COMPUTER",
+          "order": 4,
+          "allocated_marks": 3,
+          "question_count": 3,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 48,
+            "end": 50
+          }
+        }
+      ]
+    },
+    "6": {
+      "sections": [
+        {
+          "section_id": "english",
+          "name": "ENGLISH",
+          "order": 1,
+          "allocated_marks": 10,
+          "question_count": 10,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 1,
+            "end": 10
+          }
+        },
+        {
+          "section_id": "science",
+          "name": "SCIENCE",
+          "order": 2,
+          "allocated_marks": 20,
+          "question_count": 20,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 11,
+            "end": 30
+          }
+        },
+        {
+          "section_id": "maths",
+          "name": "MATHEMATICS",
+          "order": 3,
+          "allocated_marks": 15,
+          "question_count": 15,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 31,
+            "end": 45
+          }
+        },
+        {
+          "section_id": "gk_computer",
+          "name": "GK / COMPUTER",
+          "order": 4,
+          "allocated_marks": 3,
+          "question_count": 3,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 46,
+            "end": 48
+          }
+        },
+        {
+          "section_id": "current_affairs",
+          "name": "CURRENT AFFAIRS",
+          "order": 5,
+          "allocated_marks": 2,
+          "question_count": 2,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 49,
+            "end": 50
+          }
+        }
+      ]
+    },
+    "7": {
+      "sections": [
+        {
+          "section_id": "english",
+          "name": "ENGLISH",
+          "order": 1,
+          "allocated_marks": 10,
+          "question_count": 10,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 1,
+            "end": 10
+          }
+        },
+        {
+          "section_id": "science",
+          "name": "SCIENCE",
+          "order": 2,
+          "allocated_marks": 20,
+          "question_count": 20,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 11,
+            "end": 30
+          }
+        },
+        {
+          "section_id": "maths",
+          "name": "MATHEMATICS",
+          "order": 3,
+          "allocated_marks": 15,
+          "question_count": 15,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 31,
+            "end": 45
+          }
+        },
+        {
+          "section_id": "gk_computer",
+          "name": "GK / COMPUTER",
+          "order": 4,
+          "allocated_marks": 3,
+          "question_count": 3,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 46,
+            "end": 48
+          }
+        },
+        {
+          "section_id": "current_affairs",
+          "name": "CURRENT AFFAIRS",
+          "order": 5,
+          "allocated_marks": 2,
+          "question_count": 2,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 49,
+            "end": 50
+          }
+        }
+      ]
+    },
+    "8": {
+      "sections": [
+        {
+          "section_id": "english",
+          "name": "ENGLISH",
+          "order": 1,
+          "allocated_marks": 10,
+          "question_count": 10,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 1,
+            "end": 10
+          }
+        },
+        {
+          "section_id": "science",
+          "name": "SCIENCE",
+          "order": 2,
+          "allocated_marks": 20,
+          "question_count": 20,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 11,
+            "end": 30
+          }
+        },
+        {
+          "section_id": "maths",
+          "name": "MATHEMATICS",
+          "order": 3,
+          "allocated_marks": 15,
+          "question_count": 15,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 31,
+            "end": 45
+          }
+        },
+        {
+          "section_id": "gk_computer",
+          "name": "GK / COMPUTER",
+          "order": 4,
+          "allocated_marks": 3,
+          "question_count": 3,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 46,
+            "end": 48
+          }
+        },
+        {
+          "section_id": "current_affairs",
+          "name": "CURRENT AFFAIRS",
+          "order": 5,
+          "allocated_marks": 2,
+          "question_count": 2,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 49,
+            "end": 50
+          }
+        }
+      ]
+    },
+    "9": {
+      "sections": [
+        {
+          "section_id": "english",
+          "name": "ENGLISH",
+          "order": 1,
+          "allocated_marks": 10,
+          "question_count": 10,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 1,
+            "end": 10
+          }
+        },
+        {
+          "section_id": "science",
+          "name": "SCIENCE",
+          "order": 2,
+          "allocated_marks": 20,
+          "question_count": 20,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 11,
+            "end": 30
+          }
+        },
+        {
+          "section_id": "maths",
+          "name": "MATHEMATICS",
+          "order": 3,
+          "allocated_marks": 15,
+          "question_count": 15,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 31,
+            "end": 45
+          }
+        },
+        {
+          "section_id": "gk_computer",
+          "name": "GK / COMPUTER",
+          "order": 4,
+          "allocated_marks": 3,
+          "question_count": 3,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 46,
+            "end": 48
+          }
+        },
+        {
+          "section_id": "current_affairs",
+          "name": "CURRENT AFFAIRS",
+          "order": 5,
+          "allocated_marks": 2,
+          "question_count": 2,
+          "marks_per_question": 1,
+          "option_count": 4,
+          "question_numbering": {
+            "start": 49,
+            "end": 50
+          }
+        }
+      ]
+    }
+  }
+}
